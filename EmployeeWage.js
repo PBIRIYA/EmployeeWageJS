@@ -22,7 +22,7 @@ function GetWorkingHours(empCheck)
 }
 let empHrs = 0;
 let totalWorkingDays = 0;
-for(let day = 1; day<= TOTAL_WORKING_DAYS; day++)
+for(let day = 0; day< TOTAL_WORKING_DAYS; day++)
 {
    let empCheck = Math.floor(Math.random() * 10) % 3;
    empHrs += GetWorkingHours(empCheck);

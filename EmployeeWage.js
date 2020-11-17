@@ -33,4 +33,4 @@ for(let day = 1; day<= TOTAL_WORKING_DAYS; day++)
    }
 }
 let empWage = empHrs * WAGE_PER_HOUR;
-console.log("Total working days: " + totalWorkingDays + "Total Working hours: "+ empHrs + "Employee Wage: " + empWage);
+console.log("Total working days: " + totalWorkingDays + " Total Working hours: "+ empHrs + " Employee Wage: " + empWage);

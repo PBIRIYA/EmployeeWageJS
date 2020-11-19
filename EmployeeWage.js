@@ -214,4 +214,16 @@ console.log("empWage for UC2 : "+employeeWage);
     console.log("UC9 non working days :"+partTimeWorkingDays);
     //UC10 storing days, hours , wage in a single object
     console.log("UC10 using single object"+empDailyHrsAndWageArray);
+    //UC11a Calculating total wages and Total hours using single object
+    let totalWagesUsingObject = empDailyHrsAndWageArray.filter(dailywageVal=>dailywageVal.dailyWage>0).reduce((totalWageVal,dailywageVal)=>totalWageVal+=dailywageVal.dailyWage,0);
+    let totalHoursUsingObject=empDailyHrsAndWageArray.filter(dailyHrsVal=>dailyHrsVal.dailyHrs>0).reduce((totalHrsVal,dailyHrsVal)=>totalHrsVal+=dailyHrsVal.dailyHrs,0);
+    console.log("UC11a TotalHours: "+totalHoursUsingObject+" TotalWages :"+totalWagesUsingObject);
+    //UC11b print full working days using foreach 
+    process= require('process');
+    process.stdout.write("\nUC 11B Logging full working days");
+    let fulltimeWorkingDays=empDailyHrsAndWageArray.filter((day)=>day.dailyHrs==8).forEach((day)=>process.stdout.write(day.toString()));
+    process.stdout.write("\nUC 11c Logging part time working days");
+    let partWorkingDays=empDailyHrsAndWageArray.filter((day)=>day.dailyHrs==4).map((day)=>process.stdout.write(day.toString()));
+    process.stdout.write("\nUC 11d Logging non working days");
+    let noWorkingDays=empDailyHrsAndWageArray.filter((day)=>day.dailyHrs==0).map((day)=>process.stdout.write(day.toString()));  
 }
